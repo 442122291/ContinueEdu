@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>注册页</title>
+
+<link rel="stylesheet" href="static/main.css" type="text/css">
+
+</head><body background='../static/bg.jpg'>
+
+<div id="container">
+
+<br><br><br>
+
+<div class="label">注册页</div>
+
+<br><br>
+
+<div id="tw-outer">
+
+<div id="tw">
+<form action="{{ url_for('doRegister') }}" id="form-register" class="uk-form uk-form-stacked">
+<!--<form action="{{ url_for('doRegister') }}" method="post">-->
+
+<div id='name' class='outerDiv'>
+
+<label for="name">全名:</label>
+
+<input type="text" name="name" required  />
+
+<div class='message' id='nameDiv'> Enter your first and last name. </div>
+
+</div>
+
+<div class='clearfix'></div>
+
+<div id='username' class='outerDiv'>
+
+<label for="number">用户名:</label>
+
+<input type="text" name="username" required  />
+
+<div class='message' id='usernameDiv'> Pick a unique name on tw. </div>
+
+</div>
+
+<div class='clearfix'></div>
+
+<div id='password' class='outerDiv'>
+
+<label for="password">密码:</label>
+
+<input type="password" name="password" required />
+
+<div class='message' id='websiteDiv'> 6 characters or more . </div>
+
+</div>
+
+<div class='clearfix'></div>
+
+<div id='email' class='outerDiv'>
+
+<label for="email">邮箱:</label>
+
+<input type="email" name="email" required />
+
+<!--<div class='message' id='emailDiv'> We'll send you a confirmation. </div>-->
+
+</div>
+
+<div class='clearfix'></div>
+
+<div id='submit' class='outerDiv'>
+
+<input type="submit" value="注册帐号" />
+
+</div>
+
+<div class='clearfix'></div>
+
+</form>
+
+<div class="clearfix"></div>
+
+</div>
+
+</div>
+
+<br>
+
+
+</div>
+
+</body>
+
+</html>

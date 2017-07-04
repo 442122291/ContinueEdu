@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>登录页</title>
+
+<link rel="stylesheet" href="static/main.css" type="text/css">
+
+</head><body background='../static/bg.jpg'>
+
+<div id="container">
+ {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        {{ message }}
+    </div>
+ {% endfor %}
+<br><br><br>
+
+<div class="label">登录页</div>
+
+<br><br>
+
+<div id="tw-outer">
+
+<div id="tw">
+<form method="post" action="{{ url_for('doLogin') }}" id="form-login" class="uk-form uk-form-stacked">
+
+<div class='clearfix'></div>
+
+<div id='username' class='outerDiv'>
+<label for="number">用户名:</label>
+
+<input type="text" name="username" required  />
+
+</div>
+
+<div class='clearfix'></div>
+
+<div id='password' class='outerDiv'>
+<label for="password">密码:</label>
+
+<input type="password" name="password" required />
+
+
+</div>
+
+<div class='clearfix'></div>
+
+<div id='submit' class='outerDiv'>
+
+<input type="submit" value="登录" /><br><a href="/register">&nbsp&nbsp还没有账号？赶紧注册一个吧</a>
+
+</div>
+
+<div class='clearfix'></div>
+
+</form>
+
+<div class="clearfix"></div>
+
+</div>
+
+</div>
+
+<br>
+
+
+</div>
+
+</body>
+
+</html>

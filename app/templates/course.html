@@ -1,0 +1,34 @@
+<title>继续教育选课系统</title>
+<link rel="stylesheet" href="static/main.css" type="text/css">
+{% block content %}
+<div id="container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        {{ message }}
+    </div>
+    {% endfor %}
+<div class="label">
+
+
+   {% if current_user.is_authenticated  %}
+        欢迎您,{{current_user.username}}
+    <div><a href="{{ '/check?id=%s'|format(current_user.userID) }}">查询个人课表</a>&nbsp</div>
+    <div><a href="/logout"><i class="uk-icon-edit"></i>退出</a></div>
+   {% else %}
+        <a href="/login"><i class="uk-icon-edit"></i>登录</a>
+        <a href="/register"><i class="uk-icon-edit"></i>注册</a>
+    {% endif %}
+
+    <h1>选课界面</h1>
+
+    <div class="clearfix">
+        {%for course in courses%}
+        <div class="course">
+            <br>课程id：{{course['courseID']}}</br>课程名称：{{course['title']}}&nbsp学分：{{course['credit']}}
+                <a href="{{ '/take?id=%s'|format(course['courseID']) }}">选课</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+{% endblock %}

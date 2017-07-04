@@ -1,0 +1,30 @@
+<title>个人课表</title>
+<body background='../static/bg.jpg'>
+<link rel="stylesheet" href="static/main.css" type="text/css">
+{% block content %}
+<div id="container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        {{ message }}
+    </div>
+    {% endfor %}
+<div class="label">
+
+        欢迎您,{{current_user.username}}
+    <div><a href="/logout"><i class="uk-icon-edit"></i>退出</a></div>
+
+    <h1>个人课表</h1>
+
+    <div class="clearfix">
+        {%for course in myCourses%}
+        <div class="course">
+            课程名称：{{course['title']}}<a href="{{ '/untake?id=%s'|format(course['courseID']) }}">&nbsp退课</a>
+
+        </div>
+        {% endfor %}
+        <a href="{{ '/index' }}">回到选课</a>
+    </div>
+</div>
+</div>
+{% endblock %}
+</body>
